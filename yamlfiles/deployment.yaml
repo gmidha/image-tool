@@ -22,13 +22,13 @@ spec:
         ports:
         - containerPort: 5000
         resources: {}
-#        volumeMounts:
-#        - name: image-tool-storage
-#          mountPath: CHANGE_ME
-#      volumes:
-#      - name: image-tool-storage
-#        persistentVolumeClaim:
-#          claimName: CHANGE_ME
+        volumeMounts:
+        - name: image-tool-storage
+          mountPath: /var/storage
+      volumes:
+      - name: image-tool-storage
+        persistentVolumeClaim:
+          claimName: image-tool
       securityContext: {}
       serviceAccount: image-tool
       serviceAccountName: image-tool
